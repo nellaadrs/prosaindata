@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mengambil data di elephantsql &#8212; Nella Adrisia Hartono | PSD B</title>
+    <title>Tugas 2 - Mengambil data dari database &#8212; Nella Adrisia Hartono | PSD B</title>
   
   
   
@@ -163,7 +163,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tugas1.html"><strong>Tugas 1 - Scrawling Data</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Mengambil data di elephantsql</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a></li>
+
+
 
 
 
@@ -381,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mengambil data di elephantsql</h1>
+    <h1>Tugas 2 - Mengambil data dari database</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,13 +393,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Mengambil data di elephantsql</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal"><strong>Mengambil data di posgres lokal</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local"><strong>Mengambil data di sql local</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server"><strong>Mengambil data di sql server</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing"><strong>Training dan testing</strong></a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-elephantsql">Mengambil data di elephantsql</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">Mengambil data di posgres lokal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local">Mengambil data di sql local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server">Mengambil data di sql server</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing">Training dan testing</a></li>
 </ul>
 
             </nav>
@@ -410,8 +411,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-elephantsql">
-<h1><strong>Mengambil data di elephantsql</strong><a class="headerlink" href="#mengambil-data-di-elephantsql" title="Permalink to this heading">#</a></h1>
+  <div class="section" id="tugas-2-mengambil-data-dari-database">
+<h1><strong>Tugas 2 - Mengambil data dari database</strong><a class="headerlink" href="#tugas-2-mengambil-data-dari-database" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="section" id="mengambil-data-di-elephantsql">
+<h1>Mengambil data di elephantsql<a class="headerlink" href="#mengambil-data-di-elephantsql" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2
@@ -427,8 +431,8 @@ Requirement already satisfied: psycopg2 in /usr/local/lib/python3.9/dist-package
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: pandas in /usr/local/lib/python3.9/dist-packages (1.4.4)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
 Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/dist-packages (from pandas) (1.22.4)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.15.0)
 </pre></div>
 </div>
@@ -496,7 +500,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-79732157-56bd-462f-8e1f-68bfcf069f98">
+  <div id="df-ae260480-fb00-4a15-882c-b5cdd1030505">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -580,7 +584,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </table>
 <p>150 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-79732157-56bd-462f-8e1f-68bfcf069f98')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ae260480-fb00-4a15-882c-b5cdd1030505')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -631,12 +635,12 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 
       <script>
         const buttonEl =
-          document.querySelector('#df-79732157-56bd-462f-8e1f-68bfcf069f98 button.colab-df-convert');
+          document.querySelector('#df-ae260480-fb00-4a15-882c-b5cdd1030505 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-79732157-56bd-462f-8e1f-68bfcf069f98');
+          const element = document.querySelector('#df-ae260480-fb00-4a15-882c-b5cdd1030505');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -658,8 +662,8 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
   </div></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-posgres-lokal">
-<h1><strong>Mengambil data di posgres lokal</strong><a class="headerlink" href="#mengambil-data-di-posgres-lokal" title="Permalink to this heading">#</a></h1>
+<div class="section" id="mengambil-data-di-posgres-lokal">
+<h1>Mengambil data di posgres lokal<a class="headerlink" href="#mengambil-data-di-posgres-lokal" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -854,8 +858,8 @@ could not connect to server: Cannot assign requested address
 </div></div></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-sql-local">
-<h1><strong>Mengambil data di sql local</strong><a class="headerlink" href="#mengambil-data-di-sql-local" title="Permalink to this heading">#</a></h1>
+<div class="section" id="mengambil-data-di-sql-local">
+<h1>Mengambil data di sql local<a class="headerlink" href="#mengambil-data-di-sql-local" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysqlclient
@@ -979,8 +983,8 @@ Requirement already satisfied: pymysql in c:\users\asus vivobook\anaconda3\lib\s
 </div></div></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-sql-server">
-<h1><strong>Mengambil data di sql server</strong><a class="headerlink" href="#mengambil-data-di-sql-server" title="Permalink to this heading">#</a></h1>
+<div class="section" id="mengambil-data-di-sql-server">
+<h1>Mengambil data di sql server<a class="headerlink" href="#mengambil-data-di-sql-server" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># merge df</span>
@@ -1448,8 +1452,9 @@ Requirement already satisfied: pymysql in c:\users\asus vivobook\anaconda3\lib\s
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="training-dan-testing">
-<h2><strong>Training dan testing</strong><a class="headerlink" href="#training-dan-testing" title="Permalink to this heading">#</a></h2>
+<h1>Training dan testing<a class="headerlink" href="#training-dan-testing" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -1494,7 +1499,6 @@ Requirement already satisfied: pymysql in c:\users\asus vivobook\anaconda3\lib\s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ASUS VivoBook\anaconda3\lib\site-packages\sklearn\neighbors\_classification.py:228: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
   mode, _ = stats.mode(_y[neigh_ind, k], axis=1)
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1552,13 +1556,12 @@ Requirement already satisfied: pymysql in c:\users\asus vivobook\anaconda3\lib\s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Mengambil data di elephantsql</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal"><strong>Mengambil data di posgres lokal</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local"><strong>Mengambil data di sql local</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server"><strong>Mengambil data di sql server</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing"><strong>Training dan testing</strong></a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-elephantsql">Mengambil data di elephantsql</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">Mengambil data di posgres lokal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local">Mengambil data di sql local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server">Mengambil data di sql server</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing">Training dan testing</a></li>
 </ul>
 
   </nav></div>
