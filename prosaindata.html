@@ -167,8 +167,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
-
 </ul>
 
     </div>
@@ -393,9 +391,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-elephantsql">Mengambil data di elephantsql</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">Mengambil data di posgres lokal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-elephantsql">Mengambil data di elephantsql</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">Mengambil data di posgres lokal</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local">Mengambil data di sql local</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server">Mengambil data di sql server</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing">Training dan testing</a></li>
@@ -413,9 +413,8 @@ document.write(`
                   
   <div class="section" id="tugas-2-mengambil-data-dari-database">
 <h1><strong>Tugas 2 - Mengambil data dari database</strong><a class="headerlink" href="#tugas-2-mengambil-data-dari-database" title="Permalink to this heading">#</a></h1>
-</div>
 <div class="section" id="mengambil-data-di-elephantsql">
-<h1>Mengambil data di elephantsql<a class="headerlink" href="#mengambil-data-di-elephantsql" title="Permalink to this heading">#</a></h1>
+<h2>Mengambil data di elephantsql<a class="headerlink" href="#mengambil-data-di-elephantsql" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2
@@ -500,7 +499,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-ae260480-fb00-4a15-882c-b5cdd1030505">
+  <div id="df-09b03805-2fb8-4f4c-a758-178d27d87b36">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -584,7 +583,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </table>
 <p>150 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ae260480-fb00-4a15-882c-b5cdd1030505')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-09b03805-2fb8-4f4c-a758-178d27d87b36')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -635,12 +634,12 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ae260480-fb00-4a15-882c-b5cdd1030505 button.colab-df-convert');
+          document.querySelector('#df-09b03805-2fb8-4f4c-a758-178d27d87b36 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ae260480-fb00-4a15-882c-b5cdd1030505');
+          const element = document.querySelector('#df-09b03805-2fb8-4f4c-a758-178d27d87b36');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -663,7 +662,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </div>
 </div>
 <div class="section" id="mengambil-data-di-posgres-lokal">
-<h1>Mengambil data di posgres lokal<a class="headerlink" href="#mengambil-data-di-posgres-lokal" title="Permalink to this heading">#</a></h1>
+<h2>Mengambil data di posgres lokal<a class="headerlink" href="#mengambil-data-di-posgres-lokal" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -856,6 +855,7 @@ could not connect to server: Cannot assign requested address
 </table>
 <p>150 rows × 3 columns</p>
 </div></div></div>
+</div>
 </div>
 </div>
 <div class="section" id="mengambil-data-di-sql-local">
@@ -1556,9 +1556,11 @@ Requirement already satisfied: pymysql in c:\users\asus vivobook\anaconda3\lib\s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-elephantsql">Mengambil data di elephantsql</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">Mengambil data di posgres lokal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tugas 2 - Mengambil data dari database</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-elephantsql">Mengambil data di elephantsql</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">Mengambil data di posgres lokal</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local">Mengambil data di sql local</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server">Mengambil data di sql server</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing">Training dan testing</a></li>
