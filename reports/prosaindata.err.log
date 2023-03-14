@@ -17,71 +17,61 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import mysql.connector
+import psycopg2
 import pandas as pd
+import sys
+# Connection parameters, yours will be different
+param_dic = {
+    "host"      : "localhost",
+    "database"  : "prosaindata{2004111001007}",
+    "user"      : "postgres",
+    "password"  : "123456"
+}
+def connect(params_dic):
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params_dic)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+        sys.exit(1) 
+    print("Connection successful")
+    return conn
 
-koneksi=mysql.connector.connect(
-    user = "root",
-    password ="",
-    host ="localhost",
-    database ="prosain{200411100107}"
-)
-cur = koneksi.cursor()
-cur.execute('SELECT * FROM petallength')
-results = cur.fetchall()
-koneksi.close()
-df_mysql = pd.DataFrame(results, columns=['id','petallength'])
-# df_mysql.drop(df_mysql.columns[[0]],axis=1,inplace=True)
-df_mysql
+def postgresql_to_dataframe(conn, select_query, column_names):
+    """
+    Tranform a SELECT query into a pandas dataframe
+    """
+    cursor = conn.cursor()
+    try:
+        cursor.execute(select_query)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print("Error: %s" % error)
+        cursor.close()
+        return 1
+    
+    # Naturally we get a list of tupples
+    tupples = cursor.fetchall()
+    cursor.close()
+    
+    # We just need to turn it into a pandas dataframe
+    df = pd.DataFrame(tupples, columns=column_names)
+    return df
+
+# Connect to the database
+conn = connect(param_dic)
+
+column_names = ['id','sepallength']
+
+df_postLocal = postgresql_to_dataframe(conn, "select * from sepallength", column_names)
+df_postLocal
 ------------------
 
-[0;31m[0m
-[0;31mMySQLInterfaceError[0mTraceback (most recent call last)
-[0;32m/usr/local/lib/python3.9/dist-packages/mysql/connector/connection_cext.py[0m in [0;36m_open_connection[0;34m(self)[0m
-[1;32m    287[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 288[0;31m             [0mself[0m[0;34m.[0m[0m_cmysql[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0;34m**[0m[0mcnx_kwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    289[0m             [0mself[0m[0;34m.[0m[0m_cmysql[0m[0;34m.[0m[0mconverter_str_fallback[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_converter_str_fallback[0m[0;34m[0m[0;34m[0m[0m
+An exception has occurred, use %tb to see the full traceback.
 
-[0;31mMySQLInterfaceError[0m: Can't connect to MySQL server on 'localhost:3306' (99)
+[0;31mSystemExit[0m[0;31m:[0m 1
 
-The above exception was the direct cause of the following exception:
-
-[0;31mDatabaseError[0mTraceback (most recent call last)
-[0;32m<ipython-input-4-73e349b23013>[0m in [0;36m<module>[0;34m[0m
-[1;32m      2[0m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;34m[0m[0m
-[0;32m----> 4[0;31m koneksi=mysql.connector.connect(
-[0m[1;32m      5[0m     [0muser[0m [0;34m=[0m [0;34m"root"[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m     [0mpassword[0m [0;34m=[0m[0;34m""[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.9/dist-packages/mysql/connector/pooling.py[0m in [0;36mconnect[0;34m(*args, **kwargs)[0m
-[1;32m    291[0m [0;34m[0m[0m
-[1;32m    292[0m     [0;32mif[0m [0mCMySQLConnection[0m [0;32mand[0m [0;32mnot[0m [0muse_pure[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 293[0;31m         [0;32mreturn[0m [0mCMySQLConnection[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    294[0m     [0;32mreturn[0m [0mMySQLConnection[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    295[0m [0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.9/dist-packages/mysql/connector/connection_cext.py[0m in [0;36m__init__[0;34m(self, **kwargs)[0m
-[1;32m    116[0m [0;34m[0m[0m
-[1;32m    117[0m         [0;32mif[0m [0mkwargs[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 118[0;31m             [0mself[0m[0;34m.[0m[0mconnect[0m[0;34m([0m[0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    119[0m [0;34m[0m[0m
-[1;32m    120[0m     [0;32mdef[0m [0m_add_default_conn_attrs[0m[0;34m([0m[0mself[0m[0;34m)[0m [0;34m->[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.9/dist-packages/mysql/connector/abstracts.py[0m in [0;36mconnect[0;34m(self, **kwargs)[0m
-[1;32m   1176[0m [0;34m[0m[0m
-[1;32m   1177[0m         [0mself[0m[0;34m.[0m[0mdisconnect[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1178[0;31m         [0mself[0m[0;34m.[0m[0m_open_connection[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1179[0m         [0;31m# Server does not allow to run any other statement different from ALTER[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1180[0m         [0;31m# when user's password has been expired.[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.9/dist-packages/mysql/connector/connection_cext.py[0m in [0;36m_open_connection[0;34m(self)[0m
-[1;32m    291[0m                 [0mself[0m[0;34m.[0m[0mconverter[0m[0;34m.[0m[0mstr_fallback[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_converter_str_fallback[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    292[0m         [0;32mexcept[0m [0mMySQLInterfaceError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 293[0;31m             raise get_mysql_exception(
-[0m[1;32m    294[0m                 [0mmsg[0m[0;34m=[0m[0merr[0m[0;34m.[0m[0mmsg[0m[0;34m,[0m [0merrno[0m[0;34m=[0m[0merr[0m[0;34m.[0m[0merrno[0m[0;34m,[0m [0msqlstate[0m[0;34m=[0m[0merr[0m[0;34m.[0m[0msqlstate[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    295[0m             ) from err
-
-[0;31mDatabaseError[0m: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (99)
-DatabaseError: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (99)
+SystemExit: 1
 

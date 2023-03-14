@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mengambil data di sql server &#8212; Nella Adrisia Hartono | PSD B</title>
+    <title>Mengambil data di elephantsql &#8212; Nella Adrisia Hartono | PSD B</title>
   
   
   
@@ -163,7 +163,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tugas1.html"><strong>Tugas 1 - Scrawling Data</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><em>Mengambil data di sql server</em></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Mengambil data di elephantsql</strong></a></li>
+
+
 
 </ul>
 
@@ -379,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mengambil data di sql server</h1>
+    <h1>Mengambil data di elephantsql</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,10 +391,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Mengambil data di sql server</em></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local"><em>mengambil data di sql local</em></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">mengambil data di posgres lokal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">mengambil data di sql server</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Mengambil data di elephantsql</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal"><strong>Mengambil data di posgres lokal</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local"><strong>Mengambil data di sql local</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server"><strong>Mengambil data di sql server</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing"><strong>Training dan testing</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -407,8 +410,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-sql-server">
-<h1><em>Mengambil data di sql server</em><a class="headerlink" href="#mengambil-data-di-sql-server" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-elephantsql">
+<h1><strong>Mengambil data di elephantsql</strong><a class="headerlink" href="#mengambil-data-di-elephantsql" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2
@@ -422,16 +425,15 @@ Requirement already satisfied: psycopg2 in /usr/local/lib/python3.9/dist-package
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: pandas in /usr/local/lib/python3.9/dist-packages (1.3.5)
-Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.9/dist-packages (from pandas) (1.22.4)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
-Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.15.0)
+Requirement already satisfied: pandas in /usr/local/lib/python3.9/dist-packages (1.4.4)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
+Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/dist-packages (from pandas) (1.22.4)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.15.0)
 </pre></div>
 </div>
 </div>
 </div>
-<p>##<em>mengambil data di elephantsql</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -494,7 +496,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-f09174de-f0fe-4262-85b1-4400a492f706">
+  <div id="df-79732157-56bd-462f-8e1f-68bfcf069f98">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -578,7 +580,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </table>
 <p>150 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f09174de-f0fe-4262-85b1-4400a492f706')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-79732157-56bd-462f-8e1f-68bfcf069f98')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -629,12 +631,12 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f09174de-f0fe-4262-85b1-4400a492f706 button.colab-df-convert');
+          document.querySelector('#df-79732157-56bd-462f-8e1f-68bfcf069f98 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f09174de-f0fe-4262-85b1-4400a492f706');
+          const element = document.querySelector('#df-79732157-56bd-462f-8e1f-68bfcf069f98');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -656,107 +658,8 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
   </div></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-sql-local">
-<h1><em>mengambil data di sql local</em><a class="headerlink" href="#mengambil-data-di-sql-local" title="Permalink to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysqlclient
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysql-connector-python
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pymysql
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: mysqlclient in /usr/local/lib/python3.9/dist-packages (2.1.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: mysql-connector-python in /usr/local/lib/python3.9/dist-packages (8.0.32)
-Requirement already satisfied: protobuf&lt;=3.20.3,&gt;=3.11.0 in /usr/local/lib/python3.9/dist-packages (from mysql-connector-python) (3.19.6)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: pymysql in /usr/local/lib/python3.9/dist-packages (1.0.2)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mysql.connector</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">koneksi</span><span class="o">=</span><span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
-    <span class="n">password</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">host</span> <span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-    <span class="n">database</span> <span class="o">=</span><span class="s2">&quot;prosain</span><span class="si">{200411100107}</span><span class="s2">&quot;</span>
-<span class="p">)</span>
-<span class="n">cur</span> <span class="o">=</span> <span class="n">koneksi</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM petallength&#39;</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-<span class="n">koneksi</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">df_mysql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="s1">&#39;petallength&#39;</span><span class="p">])</span>
-<span class="c1"># df_mysql.drop(df_mysql.columns[[0]],axis=1,inplace=True)</span>
-<span class="n">df_mysql</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">MySQLInterfaceError</span>Traceback (most recent call last)
-<span class="nn">/usr/local/lib/python3.9/dist-packages/mysql/connector/connection_cext.py</span> in <span class="ni">_open_connection</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">288</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_cmysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">cnx_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_cmysql</span><span class="o">.</span><span class="n">converter_str_fallback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_converter_str_fallback</span>
-
-<span class="ne">MySQLInterfaceError</span>: Can&#39;t connect to MySQL server on &#39;localhost:3306&#39; (99)
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">DatabaseError</span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mf">73e349</span><span class="n">b23013</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">koneksi</span><span class="o">=</span><span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">password</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/mysql/connector/pooling.py</span> in <span class="ni">connect</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> 
-<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="k">if</span> <span class="n">CMySQLConnection</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">use_pure</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">293</span>         <span class="k">return</span> <span class="n">CMySQLConnection</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="k">return</span> <span class="n">MySQLConnection</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span> 
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/mysql/connector/connection_cext.py</span> in <span class="ni">__init__</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span> 
-<span class="g g-Whitespace">    </span><span class="mi">117</span>         <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">118</span>             <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span> 
-<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">def</span> <span class="nf">_add_default_conn_attrs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/mysql/connector/abstracts.py</span> in <span class="ni">connect</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="bp">self</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1178</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_connection</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="c1"># Server does not allow to run any other statement different from ALTER</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>         <span class="c1"># when user&#39;s password has been expired.</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/mysql/connector/connection_cext.py</span> in <span class="ni">_open_connection</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">converter</span><span class="o">.</span><span class="n">str_fallback</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_converter_str_fallback</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="k">except</span> <span class="n">MySQLInterfaceError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">293</span>             <span class="k">raise</span> <span class="n">get_mysql_exception</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="n">msg</span><span class="o">=</span><span class="n">err</span><span class="o">.</span><span class="n">msg</span><span class="p">,</span> <span class="n">errno</span><span class="o">=</span><span class="n">err</span><span class="o">.</span><span class="n">errno</span><span class="p">,</span> <span class="n">sqlstate</span><span class="o">=</span><span class="n">err</span><span class="o">.</span><span class="n">sqlstate</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>             <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-
-<span class="ne">DatabaseError</span>: 2003 (HY000): Can&#39;t connect to MySQL server on &#39;localhost:3306&#39; (99)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="mengambil-data-di-posgres-lokal">
-<h2>mengambil data di posgres lokal<a class="headerlink" href="#mengambil-data-di-posgres-lokal" title="Permalink to this heading">#</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-posgres-lokal">
+<h1><strong>Mengambil data di posgres lokal</strong><a class="headerlink" href="#mengambil-data-di-posgres-lokal" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -814,95 +717,25 @@ Requirement already satisfied: pymysql in /usr/local/lib/python3.9/dist-packages
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connecting to the PostgreSQL database...
-Connection successful
+could not connect to server: Connection refused
+	Is the server running on host &quot;localhost&quot; (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host &quot;localhost&quot; (::1) and accepting
+	TCP/IP connections on port 5432?
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>sepallength</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>4.9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>4.7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>146</td>
-      <td>6.7</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>147</td>
-      <td>6.3</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>148</td>
-      <td>6.5</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>149</td>
-      <td>6.2</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>150</td>
-      <td>5.9</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 2 columns</p>
-</div></div></div>
+<span class="ne">SystemExit</span>: 1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py:3334: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
+  warn(&quot;To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.&quot;, stacklevel=1)
+</pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>mengambil data di sql server<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyodbc</span> 
@@ -1020,11 +853,139 @@ Connection successful
 <p>150 rows × 3 columns</p>
 </div></div></div>
 </div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-sql-local">
+<h1><strong>Mengambil data di sql local</strong><a class="headerlink" href="#mengambil-data-di-sql-local" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysqlclient
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysql-connector-python
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pymysql
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mysqlclient in c:\users\asus vivobook\anaconda3\lib\site-packages (2.1.1)
+Requirement already satisfied: mysql-connector-python in c:\users\asus vivobook\anaconda3\lib\site-packages (8.0.32)
+Requirement already satisfied: protobuf&lt;=3.20.3,&gt;=3.11.0 in c:\users\asus vivobook\anaconda3\lib\site-packages (from mysql-connector-python) (3.20.3)
+Requirement already satisfied: pymysql in c:\users\asus vivobook\anaconda3\lib\site-packages (1.0.2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">koneksi</span><span class="o">=</span><span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+    <span class="n">password</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">host</span> <span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="n">database</span> <span class="o">=</span><span class="s2">&quot;prosain</span><span class="si">{200411100107}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">koneksi</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM petallength&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">koneksi</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">df_mysql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="s1">&#39;petallength&#39;</span><span class="p">])</span>
+<span class="c1"># df_mysql.drop(df_mysql.columns[[0]],axis=1,inplace=True)</span>
+<span class="n">df_mysql</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>petallength</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>146</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>147</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>148</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>149</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150</td>
+      <td>5.1</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="mengambil-data-di-sql-server">
+<h1><strong>Mengambil data di sql server</strong><a class="headerlink" href="#mengambil-data-di-sql-server" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># merge df</span>
-<span class="c1"># result = pd.concat([df_postLocal, df_postEle,df_mysql, df_sqlServer], axis=1)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_postLocal</span><span class="p">,</span><span class="n">df_sqlServer</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_postLocal</span><span class="p">,</span> <span class="n">df_postEle</span><span class="p">,</span><span class="n">df_mysql</span><span class="p">,</span> <span class="n">df_sqlServer</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#result = pd.merge(df_postLocal,df_sqlServer, how=&quot;inner&quot;, on=[&quot;id&quot;, &quot;id&quot;])</span>
 <span class="n">result</span>
 </pre></div>
 </div>
@@ -1050,6 +1011,11 @@ Connection successful
       <th></th>
       <th>id</th>
       <th>sepallength</th>
+      <th>id</th>
+      <th>sepalwidth</th>
+      <th>id</th>
+      <th>petallength</th>
+      <th>id</th>
       <th>petalwidth</th>
       <th>class</th>
     </tr>
@@ -1059,6 +1025,11 @@ Connection successful
       <th>0</th>
       <td>1</td>
       <td>5.1</td>
+      <td>1</td>
+      <td>3.5</td>
+      <td>1</td>
+      <td>1.4</td>
+      <td>1</td>
       <td>0.2</td>
       <td>Iris-setosa</td>
     </tr>
@@ -1066,6 +1037,11 @@ Connection successful
       <th>1</th>
       <td>2</td>
       <td>4.9</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>1.4</td>
+      <td>2</td>
       <td>0.2</td>
       <td>Iris-setosa</td>
     </tr>
@@ -1073,6 +1049,11 @@ Connection successful
       <th>2</th>
       <td>3</td>
       <td>4.7</td>
+      <td>3</td>
+      <td>3.2</td>
+      <td>3</td>
+      <td>1.3</td>
+      <td>3</td>
       <td>0.2</td>
       <td>Iris-setosa</td>
     </tr>
@@ -1080,6 +1061,11 @@ Connection successful
       <th>3</th>
       <td>4</td>
       <td>4.6</td>
+      <td>4</td>
+      <td>3.1</td>
+      <td>4</td>
+      <td>1.5</td>
+      <td>4</td>
       <td>0.2</td>
       <td>Iris-setosa</td>
     </tr>
@@ -1087,6 +1073,11 @@ Connection successful
       <th>4</th>
       <td>5</td>
       <td>5.0</td>
+      <td>5</td>
+      <td>3.6</td>
+      <td>5</td>
+      <td>1.4</td>
+      <td>5</td>
       <td>0.2</td>
       <td>Iris-setosa</td>
     </tr>
@@ -1096,11 +1087,21 @@ Connection successful
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>145</th>
       <td>146</td>
       <td>6.7</td>
+      <td>146</td>
+      <td>3.0</td>
+      <td>146</td>
+      <td>5.2</td>
+      <td>146</td>
       <td>2.3</td>
       <td>Iris-virginica</td>
     </tr>
@@ -1108,6 +1109,11 @@ Connection successful
       <th>146</th>
       <td>147</td>
       <td>6.3</td>
+      <td>147</td>
+      <td>2.5</td>
+      <td>147</td>
+      <td>5.0</td>
+      <td>147</td>
       <td>1.9</td>
       <td>Iris-virginica</td>
     </tr>
@@ -1115,6 +1121,11 @@ Connection successful
       <th>147</th>
       <td>148</td>
       <td>6.5</td>
+      <td>148</td>
+      <td>3.0</td>
+      <td>148</td>
+      <td>5.2</td>
+      <td>148</td>
       <td>2.0</td>
       <td>Iris-virginica</td>
     </tr>
@@ -1122,6 +1133,11 @@ Connection successful
       <th>148</th>
       <td>149</td>
       <td>6.2</td>
+      <td>149</td>
+      <td>3.4</td>
+      <td>149</td>
+      <td>5.4</td>
+      <td>149</td>
       <td>2.3</td>
       <td>Iris-virginica</td>
     </tr>
@@ -1129,12 +1145,17 @@ Connection successful
       <th>149</th>
       <td>150</td>
       <td>5.9</td>
+      <td>150</td>
+      <td>3.0</td>
+      <td>150</td>
+      <td>5.1</td>
+      <td>150</td>
       <td>1.8</td>
       <td>Iris-virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 4 columns</p>
+<p>150 rows × 9 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1145,29 +1166,333 @@ Connection successful
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_13296</span>\<span class="mf">3333529843.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">result</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">columns</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">result</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">~\anaconda3\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5067</span>             <span class="n">key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5068</span> 
-<span class="ne">-&gt; </span><span class="mi">5069</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">getitem</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5070</span>         <span class="c1"># Because we ruled out integer above, we always get an arraylike here</span>
-<span class="g g-Whitespace">   </span><span class="mi">5071</span>         <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ne">IndexError</span>: index 4 is out of bounds for axis 0 with size 4
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepallength</th>
+      <th>sepalwidth</th>
+      <th>petallength</th>
+      <th>petalwidth</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[Decimal(&#39;5.1&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.9&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.7&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.6&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.6&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.4&#39;) Decimal(&#39;3.9&#39;) Decimal(&#39;1.7&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;4.6&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.4&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.9&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.1&#39;)]
+ [Decimal(&#39;5.4&#39;) Decimal(&#39;3.7&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.8&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.8&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.1&#39;)]
+ [Decimal(&#39;4.3&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.1&#39;) Decimal(&#39;0.1&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;4.0&#39;) Decimal(&#39;1.2&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;4.4&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;5.4&#39;) Decimal(&#39;3.9&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;1.7&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;5.4&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.7&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.7&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;4.6&#39;) Decimal(&#39;3.6&#39;) Decimal(&#39;1.0&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;1.7&#39;) Decimal(&#39;0.5&#39;)]
+ [Decimal(&#39;4.8&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.9&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;5.2&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.2&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.7&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.8&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.4&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;5.2&#39;) Decimal(&#39;4.1&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.1&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;4.2&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.9&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.1&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;1.2&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.9&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.1&#39;)]
+ [Decimal(&#39;4.4&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;4.5&#39;) Decimal(&#39;2.3&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;4.4&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;1.3&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.6&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;1.9&#39;) Decimal(&#39;0.4&#39;)]
+ [Decimal(&#39;4.8&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.3&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;1.6&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;4.6&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.3&#39;) Decimal(&#39;3.7&#39;) Decimal(&#39;1.5&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;1.4&#39;) Decimal(&#39;0.2&#39;)]
+ [Decimal(&#39;7.0&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;4.7&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.9&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;4.9&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;2.3&#39;) Decimal(&#39;4.0&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.5&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.6&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;4.7&#39;) Decimal(&#39;1.6&#39;)]
+ [Decimal(&#39;4.9&#39;) Decimal(&#39;2.4&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;6.6&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;4.6&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;5.2&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;3.9&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;2.0&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;5.9&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.2&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.0&#39;) Decimal(&#39;2.2&#39;) Decimal(&#39;4.0&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;6.1&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;4.7&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;5.6&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;3.6&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;4.4&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;5.6&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;4.1&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;6.2&#39;) Decimal(&#39;2.2&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;5.6&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;3.9&#39;) Decimal(&#39;1.1&#39;)]
+ [Decimal(&#39;5.9&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;4.8&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.1&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.0&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;4.9&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.1&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.7&#39;) Decimal(&#39;1.2&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;4.3&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.6&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.4&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;6.8&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.8&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.0&#39;) Decimal(&#39;1.7&#39;)]
+ [Decimal(&#39;6.0&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;2.6&#39;) Decimal(&#39;3.5&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;2.4&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;1.1&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;2.4&#39;) Decimal(&#39;3.7&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;3.9&#39;) Decimal(&#39;1.2&#39;)]
+ [Decimal(&#39;6.0&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;1.6&#39;)]
+ [Decimal(&#39;5.4&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.0&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.6&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;4.7&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;2.3&#39;) Decimal(&#39;4.4&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;5.6&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.1&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;4.0&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;5.5&#39;) Decimal(&#39;2.6&#39;) Decimal(&#39;4.4&#39;) Decimal(&#39;1.2&#39;)]
+ [Decimal(&#39;6.1&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.6&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;2.6&#39;) Decimal(&#39;4.0&#39;) Decimal(&#39;1.2&#39;)]
+ [Decimal(&#39;5.0&#39;) Decimal(&#39;2.3&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;1.0&#39;)]
+ [Decimal(&#39;5.6&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;4.2&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.2&#39;) Decimal(&#39;1.2&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;4.2&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.2&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;4.3&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;5.1&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;1.1&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.1&#39;) Decimal(&#39;1.3&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;6.0&#39;) Decimal(&#39;2.5&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;1.9&#39;)]
+ [Decimal(&#39;7.1&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.9&#39;) Decimal(&#39;2.1&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;5.6&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.5&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.8&#39;) Decimal(&#39;2.2&#39;)]
+ [Decimal(&#39;7.6&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;6.6&#39;) Decimal(&#39;2.1&#39;)]
+ [Decimal(&#39;4.9&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;4.5&#39;) Decimal(&#39;1.7&#39;)]
+ [Decimal(&#39;7.3&#39;) Decimal(&#39;2.9&#39;) Decimal(&#39;6.3&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;5.8&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;7.2&#39;) Decimal(&#39;3.6&#39;) Decimal(&#39;6.1&#39;) Decimal(&#39;2.5&#39;)]
+ [Decimal(&#39;6.5&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;2.0&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;5.3&#39;) Decimal(&#39;1.9&#39;)]
+ [Decimal(&#39;6.8&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.5&#39;) Decimal(&#39;2.1&#39;)]
+ [Decimal(&#39;5.7&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;5.0&#39;) Decimal(&#39;2.0&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;2.4&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;5.3&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;6.5&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.5&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;7.7&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;6.7&#39;) Decimal(&#39;2.2&#39;)]
+ [Decimal(&#39;7.7&#39;) Decimal(&#39;2.6&#39;) Decimal(&#39;6.9&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;6.0&#39;) Decimal(&#39;2.2&#39;) Decimal(&#39;5.0&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.9&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;5.7&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;5.6&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.9&#39;) Decimal(&#39;2.0&#39;)]
+ [Decimal(&#39;7.7&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;6.7&#39;) Decimal(&#39;2.0&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;4.9&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;5.7&#39;) Decimal(&#39;2.1&#39;)]
+ [Decimal(&#39;7.2&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;6.0&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.2&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;4.8&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.1&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.9&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;5.6&#39;) Decimal(&#39;2.1&#39;)]
+ [Decimal(&#39;7.2&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.8&#39;) Decimal(&#39;1.6&#39;)]
+ [Decimal(&#39;7.4&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;6.1&#39;) Decimal(&#39;1.9&#39;)]
+ [Decimal(&#39;7.9&#39;) Decimal(&#39;3.8&#39;) Decimal(&#39;6.4&#39;) Decimal(&#39;2.0&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;5.6&#39;) Decimal(&#39;2.2&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;2.8&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;1.5&#39;)]
+ [Decimal(&#39;6.1&#39;) Decimal(&#39;2.6&#39;) Decimal(&#39;5.6&#39;) Decimal(&#39;1.4&#39;)]
+ [Decimal(&#39;7.7&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;6.1&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;5.6&#39;) Decimal(&#39;2.4&#39;)]
+ [Decimal(&#39;6.4&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;5.5&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.0&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;4.8&#39;) Decimal(&#39;1.8&#39;)]
+ [Decimal(&#39;6.9&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;5.4&#39;) Decimal(&#39;2.1&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;5.6&#39;) Decimal(&#39;2.4&#39;)]
+ [Decimal(&#39;6.9&#39;) Decimal(&#39;3.1&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;5.8&#39;) Decimal(&#39;2.7&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;1.9&#39;)]
+ [Decimal(&#39;6.8&#39;) Decimal(&#39;3.2&#39;) Decimal(&#39;5.9&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.3&#39;) Decimal(&#39;5.7&#39;) Decimal(&#39;2.5&#39;)]
+ [Decimal(&#39;6.7&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.2&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;6.3&#39;) Decimal(&#39;2.5&#39;) Decimal(&#39;5.0&#39;) Decimal(&#39;1.9&#39;)]
+ [Decimal(&#39;6.5&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.2&#39;) Decimal(&#39;2.0&#39;)]
+ [Decimal(&#39;6.2&#39;) Decimal(&#39;3.4&#39;) Decimal(&#39;5.4&#39;) Decimal(&#39;2.3&#39;)]
+ [Decimal(&#39;5.9&#39;) Decimal(&#39;3.0&#39;) Decimal(&#39;5.1&#39;) Decimal(&#39;1.8&#39;)]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="training-dan-testing">
+<h2><strong>Training dan testing</strong><a class="headerlink" href="#training-dan-testing" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span> 
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; DecisionTree Accuracy : &quot;</span><span class="p">,</span>
+    <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> DecisionTree Accuracy :  96.66666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; KNN Accuracy : &quot;</span><span class="p">,</span>
+    <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> KNN Accuracy :  100.0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ASUS VivoBook\anaconda3\lib\site-packages\sklearn\neighbors\_classification.py:228: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  mode, _ = stats.mode(_y[neigh_ind, k], axis=1)
 </pre></div>
 </div>
 </div>
@@ -1227,10 +1552,11 @@ Connection successful
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Mengambil data di sql server</em></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local"><em>mengambil data di sql local</em></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal">mengambil data di posgres lokal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">mengambil data di sql server</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Mengambil data di elephantsql</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-posgres-lokal"><strong>Mengambil data di posgres lokal</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-local"><strong>Mengambil data di sql local</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data-di-sql-server"><strong>Mengambil data di sql server</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-testing"><strong>Training dan testing</strong></a></li>
 </ul>
 </li>
 </ul>
