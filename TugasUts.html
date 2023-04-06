@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Preprocessing &#8212; Nella Adrisia Hartono | PSD B</title>
+    <title>Tugas Pra UTS Prepocessing &#8212; Nella Adrisia Hartono | PSD B</title>
   
   
   
@@ -378,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preprocessing</h1>
+    <h1>Tugas Pra UTS Prepocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,23 +388,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengahapusan-simbol-dan-tanda-baca-punctuation">Pengahapusan simbol dan tanda baca (punctuation)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-angka">Menghapus angka</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-ukuran-huruf-menjadi-kecil">Mengubah ukuran huruf menjadi kecil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengahapusan-simbol-dan-tanda-baca-punctuation">Pengahapusan simbol dan tanda baca (punctuation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-angka">Menghapus angka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-ukuran-huruf-menjadi-kecil">Mengubah ukuran huruf menjadi kecil</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">Normalisasi data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-kata-tidak-baku">Normalisasi kata tidak baku</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">Tokenizing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">Normalisasi data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-kata-tidak-baku">Normalisasi kata tidak baku</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">Tokenizing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -415,7 +414,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>#Tugas Pra UTS Prepocessing</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-pra-uts-prepocessing">
+<h1>Tugas Pra UTS Prepocessing<a class="headerlink" href="#tugas-pra-uts-prepocessing" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#install library</span>
@@ -435,9 +435,9 @@ Requirement already satisfied: numpy in /usr/local/lib/python3.9/dist-packages (
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: pandas in /usr/local/lib/python3.9/dist-packages (1.4.4)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
 Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/dist-packages (from pandas) (1.22.4)
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
@@ -449,71 +449,73 @@ Requirement already satisfied: sastrawi in /usr/local/lib/python3.9/dist-package
 Requirement already satisfied: swifter in /usr/local/lib/python3.9/dist-packages (1.3.4)
 Requirement already satisfied: tqdm&gt;=4.33.0 in /usr/local/lib/python3.9/dist-packages (from swifter) (4.65.0)
 Requirement already satisfied: ipywidgets&gt;=7.0.0 in /usr/local/lib/python3.9/dist-packages (from swifter) (7.7.1)
-Requirement already satisfied: bleach&gt;=3.1.1 in /usr/local/lib/python3.9/dist-packages (from swifter) (6.0.0)
-Requirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.9/dist-packages (from swifter) (1.4.4)
 Requirement already satisfied: dask[dataframe]&gt;=2.10.0 in /usr/local/lib/python3.9/dist-packages (from swifter) (2022.12.1)
 Requirement already satisfied: psutil&gt;=5.6.6 in /usr/local/lib/python3.9/dist-packages (from swifter) (5.9.4)
+Requirement already satisfied: bleach&gt;=3.1.1 in /usr/local/lib/python3.9/dist-packages (from swifter) (6.0.0)
+Requirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.9/dist-packages (from swifter) (1.4.4)
 Requirement already satisfied: cloudpickle&gt;=0.2.2 in /usr/local/lib/python3.9/dist-packages (from swifter) (2.2.1)
 Requirement already satisfied: parso&gt;0.4.0 in /usr/local/lib/python3.9/dist-packages (from swifter) (0.8.3)
-Requirement already satisfied: webencodings in /usr/local/lib/python3.9/dist-packages (from bleach&gt;=3.1.1-&gt;swifter) (0.5.1)
 Requirement already satisfied: six&gt;=1.9.0 in /usr/local/lib/python3.9/dist-packages (from bleach&gt;=3.1.1-&gt;swifter) (1.16.0)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.9/dist-packages (from bleach&gt;=3.1.1-&gt;swifter) (0.5.1)
+Requirement already satisfied: click&gt;=7.0 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (8.1.3)
 Requirement already satisfied: toolz&gt;=0.8.2 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (0.12.0)
 Requirement already satisfied: partd&gt;=0.3.10 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.3.0)
 Requirement already satisfied: pyyaml&gt;=5.3.1 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (6.0)
-Requirement already satisfied: click&gt;=7.0 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (8.1.3)
 Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (23.0)
 Requirement already satisfied: fsspec&gt;=0.6.0 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (2023.3.0)
 Requirement already satisfied: numpy&gt;=1.18 in /usr/local/lib/python3.9/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.22.4)
-Requirement already satisfied: ipython&gt;=4.0.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (7.34.0)
 Requirement already satisfied: ipykernel&gt;=4.5.1 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (5.5.6)
-Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (3.0.7)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (5.7.1)
-Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.0)
 Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (3.6.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2.8.2)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (3.0.7)
+Requirement already satisfied: ipython&gt;=4.0.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (7.34.0)
+Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /usr/local/lib/python3.9/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (5.7.1)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2022.7.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2.8.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-client in /usr/local/lib/python3.9/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.1.12)
-Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.9/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.9/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.2)
+Requirement already satisfied: jupyter-client in /usr/local/lib/python3.9/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.1.12)
+Requirement already satisfied: decorator in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.4.2)
+Requirement already satisfied: pygments in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.14.0)
+Requirement already satisfied: matplotlib-inline in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.1.6)
+Requirement already satisfied: pexpect&gt;4.3 in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.8.0)
+Requirement already satisfied: pickleshare in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.5)
+Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (67.6.1)
 Requirement already satisfied: backcall in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.0)
 Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (3.0.38)
-Requirement already satisfied: decorator in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.4.2)
 Requirement already satisfied: jedi&gt;=0.16 in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.18.2)
-Requirement already satisfied: pickleshare in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.5)
-Requirement already satisfied: pexpect&gt;4.3 in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.8.0)
-Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (67.6.1)
-Requirement already satisfied: matplotlib-inline in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.1.6)
-Requirement already satisfied: pygments in /usr/local/lib/python3.9/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.14.0)
 Requirement already satisfied: locket in /usr/local/lib/python3.9/dist-packages (from partd&gt;=0.3.10-&gt;dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.0.0)
 Requirement already satisfied: notebook&gt;=4.4.1 in /usr/local/lib/python3.9/dist-packages (from widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.4.8)
-Requirement already satisfied: nbformat in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.8.0)
-Requirement already satisfied: pyzmq&gt;=17 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (23.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: argon2-cffi in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (21.3.0)
+Requirement already satisfied: jupyter-core&gt;=4.6.1 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.3.0)
+Requirement already satisfied: prometheus-client in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.16.0)
 Requirement already satisfied: nest-asyncio&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.5.6)
 Requirement already satisfied: terminado&gt;=0.8.3 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.17.1)
-Requirement already satisfied: prometheus-client in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.16.0)
-Requirement already satisfied: nbconvert in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.5.4)
 Requirement already satisfied: Send2Trash&gt;=1.8.0 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.8.0)
-Requirement already satisfied: argon2-cffi in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (21.3.0)
-Requirement already satisfied: jupyter-core&gt;=4.6.1 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.3.0)
+Requirement already satisfied: nbformat in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.8.0)
+Requirement already satisfied: pyzmq&gt;=17 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (23.2.1)
 Requirement already satisfied: jinja2 in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (3.1.2)
+Requirement already satisfied: nbconvert in /usr/local/lib/python3.9/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.5.4)
 Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.9/dist-packages (from pexpect&gt;4.3-&gt;ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.0)
 Requirement already satisfied: wcwidth in /usr/local/lib/python3.9/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.6)
 Requirement already satisfied: platformdirs&gt;=2.5 in /usr/local/lib/python3.9/dist-packages (from jupyter-core&gt;=4.6.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (3.2.0)
+Requirement already satisfied: argon2-cffi-bindings in /usr/local/lib/python3.9/dist-packages (from argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (21.2.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.9/dist-packages (from jinja2-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.1.2)
+Requirement already satisfied: lxml in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.9.2)
+Requirement already satisfied: tinycss2 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.2.1)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.5.0)
+Requirement already satisfied: defusedxml in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.4)
+Requirement already satisfied: nbclient&gt;=0.5.0 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.5.13)
+Requirement already satisfied: jupyterlab-pygments in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.2)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.8.4)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.11.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: argon2-cffi-bindings in /usr/local/lib/python3.9/dist-packages (from argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (21.2.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.9/dist-packages (from jinja2-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.1.2)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.5.0)
-Requirement already satisfied: tinycss2 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.2.1)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.5.13)
-Requirement already satisfied: defusedxml in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.1)
-Requirement already satisfied: lxml in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.9.2)
-Requirement already satisfied: entrypoints&gt;=0.2.2 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.4)
-Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.8.4)
-Requirement already satisfied: jupyterlab-pygments in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.2)
-Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.9/dist-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.11.2)
-Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.9/dist-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.16.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.9/dist-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.16.3)
 Requirement already satisfied: jsonschema&gt;=2.6 in /usr/local/lib/python3.9/dist-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.3.3)
 Requirement already satisfied: attrs&gt;=17.4.0 in /usr/local/lib/python3.9/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (22.2.0)
 Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /usr/local/lib/python3.9/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.19.3)
@@ -526,21 +528,110 @@ Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.9/dist
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: gensim in /usr/local/lib/python3.9/dist-packages (4.3.1)
+Requirement already satisfied: scipy&gt;=1.7.0 in /usr/local/lib/python3.9/dist-packages (from gensim) (1.10.1)
 Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/dist-packages (from gensim) (1.22.4)
 Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/lib/python3.9/dist-packages (from gensim) (6.3.0)
-Requirement already satisfied: scipy&gt;=1.7.0 in /usr/local/lib/python3.9/dist-packages (from gensim) (1.10.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: nltk in /usr/local/lib/python3.9/dist-packages (3.8.1)
 Requirement already satisfied: click in /usr/local/lib/python3.9/dist-packages (from nltk) (8.1.3)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.9/dist-packages (from nltk) (4.65.0)
 Requirement already satisfied: regex&gt;=2021.8.3 in /usr/local/lib/python3.9/dist-packages (from nltk) (2022.10.31)
 Requirement already satisfied: joblib in /usr/local/lib/python3.9/dist-packages (from nltk) (1.1.1)
-Requirement already satisfied: tqdm in /usr/local/lib/python3.9/dist-packages (from nltk) (4.65.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 3021, in _dep_map
+    return self.__dep_map
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 2815, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _DistInfoDistribution__dep_map
 
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/cli/base_command.py&quot;, line 167, in exc_logging_wrapper
+    status = run_func(*args)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/cli/req_command.py&quot;, line 199, in wrapper
+    return func(self, options, args)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/commands/install.py&quot;, line 397, in run
+    conflicts = self._determine_conflicts(to_install)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/commands/install.py&quot;, line 529, in _determine_conflicts
+    return check_install_conflicts(to_install)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/operations/check.py&quot;, line 101, in check_install_conflicts
+    package_set, _ = create_package_set_from_installed()
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/operations/check.py&quot;, line 42, in create_package_set_from_installed
+    dependencies = list(dist.iter_dependencies())
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/metadata/pkg_resources.py&quot;, line 202, in iter_dependencies
+    return self._dist.requires(extras)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 2736, in requires
+    dm = self._dep_map
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 3023, in _dep_map
+    self.__dep_map = self._compute_dependencies()
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 3033, in _compute_dependencies
+    reqs.extend(parse_requirements(req))
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 3094, in parse_requirements
+    yield Requirement(line)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/pkg_resources/__init__.py&quot;, line 3101, in __init__
+    super(Requirement, self).__init__(requirement_string)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/packaging/requirements.py&quot;, line 122, in __init__
+    self.specifier: SpecifierSet = SpecifierSet(req.specifier)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/packaging/specifiers.py&quot;, line 634, in __init__
+    parsed.add(Specifier(specifier))
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/packaging/specifiers.py&quot;, line 125, in __hash__
+    return hash(self._canonical_spec)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/packaging/specifiers.py&quot;, line 122, in _canonical_spec
+    return self._spec[0], canonicalize_version(self._spec[1])
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/packaging/utils.py&quot;, line 44, in canonicalize_version
+    try:
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/bin/pip3&quot;, line 8, in &lt;module&gt;
+    sys.exit(main())
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/cli/main.py&quot;, line 70, in main
+    return command.main(cmd_args)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/cli/base_command.py&quot;, line 101, in main
+    return self._main(args)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/cli/base_command.py&quot;, line 221, in _main
+    return run(options, args)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/cli/base_command.py&quot;, line 204, in exc_logging_wrapper
+    logger.critical(&quot;Operation cancelled by user&quot;)
+  File &quot;/usr/lib/python3.9/logging/__init__.py&quot;, line 1493, in critical
+    self._log(CRITICAL, msg, args, **kwargs)
+  File &quot;/usr/lib/python3.9/logging/__init__.py&quot;, line 1589, in _log
+    self.handle(record)
+  File &quot;/usr/lib/python3.9/logging/__init__.py&quot;, line 1599, in handle
+    self.callHandlers(record)
+  File &quot;/usr/lib/python3.9/logging/__init__.py&quot;, line 1661, in callHandlers
+    hdlr.handle(record)
+  File &quot;/usr/lib/python3.9/logging/__init__.py&quot;, line 952, in handle
+    self.emit(record)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_internal/utils/logging.py&quot;, line 172, in emit
+    self.console.print(renderable, overflow=&quot;ignore&quot;, crop=False, style=style)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/console.py&quot;, line 1619, in print
+    extend(
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/segment.py&quot;, line 187, in &lt;genexpr&gt;
+    result_segments = (
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/console.py&quot;, line 1254, in render
+    for render_output in iter_render:
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/text.py&quot;, line 637, in __rich_console__
+    all_lines = Text(&quot;\n&quot;).join(lines)
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/text.py&quot;, line 721, in join
+    new_text = self.blank_copy()
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/text.py&quot;, line 412, in blank_copy
+    copy_self = Text(
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/text.py&quot;, line 144, in __init__
+    self._text = [strip_control_codes(text)]
+  File &quot;/usr/local/lib/python3.9/dist-packages/pip/_vendor/rich/control.py&quot;, line 171, in strip_control_codes
+    return text.translate(_translate_table)
+KeyboardInterrupt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
 </pre></div>
 </div>
 </div>
@@ -807,9 +898,9 @@ Name: Label, dtype: int64
 </div>
 </div>
 <div class="section" id="preprocessing">
-<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h1>
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
 <div class="section" id="pengahapusan-simbol-dan-tanda-baca-punctuation">
-<h2>Pengahapusan simbol dan tanda baca (punctuation)<a class="headerlink" href="#pengahapusan-simbol-dan-tanda-baca-punctuation" title="Permalink to this heading">#</a></h2>
+<h3>Pengahapusan simbol dan tanda baca (punctuation)<a class="headerlink" href="#pengahapusan-simbol-dan-tanda-baca-punctuation" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#proses menghilangkan simbol dan emoji</span>
@@ -886,7 +977,7 @@ Name: Abstrak, dtype: object
 </div>
 </div>
 <div class="section" id="menghapus-angka">
-<h2>Menghapus angka<a class="headerlink" href="#menghapus-angka" title="Permalink to this heading">#</a></h2>
+<h3>Menghapus angka<a class="headerlink" href="#menghapus-angka" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#proses menghilangkan angka</span>
@@ -916,7 +1007,7 @@ Name: Abstrak, Length: 810, dtype: object
 </div>
 </div>
 <div class="section" id="mengubah-ukuran-huruf-menjadi-kecil">
-<h2>Mengubah ukuran huruf menjadi kecil<a class="headerlink" href="#mengubah-ukuran-huruf-menjadi-kecil" title="Permalink to this heading">#</a></h2>
+<h3>Mengubah ukuran huruf menjadi kecil<a class="headerlink" href="#mengubah-ukuran-huruf-menjadi-kecil" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#proses casefolding</span>
@@ -948,7 +1039,7 @@ Name: Abstrak, Length: 810, dtype: object
 </div>
 </div>
 <div class="section" id="normalisasi-data">
-<h1>Normalisasi data<a class="headerlink" href="#normalisasi-data" title="Permalink to this heading">#</a></h1>
+<h2>Normalisasi data<a class="headerlink" href="#normalisasi-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;punkt&quot;</span><span class="p">)</span>
@@ -991,7 +1082,7 @@ Name: hasil_token, Length: 810, dtype: object
 </div>
 </div>
 <div class="section" id="normalisasi-kata-tidak-baku">
-<h2>Normalisasi kata tidak baku<a class="headerlink" href="#normalisasi-kata-tidak-baku" title="Permalink to this heading">#</a></h2>
+<h3>Normalisasi kata tidak baku<a class="headerlink" href="#normalisasi-kata-tidak-baku" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Normalisasi kata tidak baku</span>
@@ -1039,9 +1130,9 @@ Name: comment_normalize, dtype: object
 </div>
 </div>
 <div class="section" id="tokenizing">
-<h2>Tokenizing<a class="headerlink" href="#tokenizing" title="Permalink to this heading">#</a></h2>
+<h3>Tokenizing<a class="headerlink" href="#tokenizing" title="Permalink to this heading">#</a></h3>
 <div class="section" id="stopword-removal">
-<h3>Stopword Removal<a class="headerlink" href="#stopword-removal" title="Permalink to this heading">#</a></h3>
+<h4>Stopword Removal<a class="headerlink" href="#stopword-removal" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nltk
@@ -1172,7 +1263,7 @@ Name: stopwords_removal_final, dtype: object
 </div>
 </div>
 <div class="section" id="stemming">
-<h2>Stemming<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h2>
+<h3>Stemming<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#proses stem</span>
@@ -6580,6 +6671,7 @@ Cosine similarity between &#39;teknologi&#39; and &#39;mobile&#39; - CBOW :  0.9
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -6630,23 +6722,22 @@ Cosine similarity between &#39;teknologi&#39; and &#39;mobile&#39; - CBOW :  0.9
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprocessing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengahapusan-simbol-dan-tanda-baca-punctuation">Pengahapusan simbol dan tanda baca (punctuation)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-angka">Menghapus angka</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-ukuran-huruf-menjadi-kecil">Mengubah ukuran huruf menjadi kecil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengahapusan-simbol-dan-tanda-baca-punctuation">Pengahapusan simbol dan tanda baca (punctuation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-angka">Menghapus angka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-ukuran-huruf-menjadi-kecil">Mengubah ukuran huruf menjadi kecil</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">Normalisasi data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-kata-tidak-baku">Normalisasi kata tidak baku</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">Tokenizing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">Normalisasi data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-kata-tidak-baku">Normalisasi kata tidak baku</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizing">Tokenizing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
