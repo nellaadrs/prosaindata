@@ -32,7 +32,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-from google.colab import drive
-drive.mount('/content/drive')
+#install library
+!pip install numpy
+!pip install pandas
+!pip install sastrawi
+!pip install swifter
+!pip install gensim
+!pip install nltk
 -------------------
 
