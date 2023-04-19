@@ -63,6 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas7';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="UTS" href="UTS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,12 +161,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tugas1.html"><strong>Tugas 1 - Scrawling Data</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="prosaindata.html"><strong>Tugas 2 - Mengambil data dari database</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="TugasUts.html"><strong>Tugas Pra UTS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS.html"><strong>UTS</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UTSKlasifikasi.html"><strong>UTS Modeling</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>PAGERANK</strong></a></li>
 </ul>
 
     </div>
@@ -416,7 +417,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="section" id="pagerank">
+  <div class="tex2jax_ignore mathjax_ignore section" id="pagerank">
 <h1><strong>PAGERANK</strong><a class="headerlink" href="#pagerank" title="Permalink to this heading">#</a></h1>
 <ul>
 <li><p>Pengertian</p>
@@ -436,16 +437,16 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: matplotlib in /usr/local/lib/python3.9/dist-packages (3.7.1)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (1.4.4)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (23.0)
-Requirement already satisfied: importlib-resources&gt;=3.2.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (5.12.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (1.0.7)
 Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (0.11.0)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (4.39.3)
-Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (8.4.0)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (1.0.7)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (2.8.2)
-Requirement already satisfied: numpy&gt;=1.20 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (1.22.4)
 Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (3.0.9)
+Requirement already satisfied: numpy&gt;=1.20 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (1.22.4)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (23.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (1.4.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (8.4.0)
+Requirement already satisfied: importlib-resources&gt;=3.2.0 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (5.12.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.9/dist-packages (from matplotlib) (2.8.2)
 Requirement already satisfied: zipp&gt;=3.1.0 in /usr/local/lib/python3.9/dist-packages (from importlib-resources&gt;=3.2.0-&gt;matplotlib) (3.15.0)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
 </pre></div>
@@ -493,7 +494,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83513c1fe1b903430e96923913b22a99f0552596ed6ddda3c2789954b28680e1.png" src="_images/83513c1fe1b903430e96923913b22a99f0552596ed6ddda3c2789954b28680e1.png" />
+<img alt="_images/c97bb83fa9fcd02883b286bbe73a721813e87d942c9bf92d7c0a2000c907588c.png" src="_images/c97bb83fa9fcd02883b286bbe73a721813e87d942c9bf92d7c0a2000c907588c.png" />
 </div>
 </div>
 <div class="section" id="hitung-manual-pagerank-dari-graph-yang-anda-buat">
@@ -1552,6 +1553,15 @@ hoped that he had forgotten his anger by then.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="UTS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>UTS</strong></p>
+      </div>
+    </a>
 </div></div>
   
 </div>
