@@ -421,15 +421,15 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: psycopg2 in /usr/local/lib/python3.9/dist-packages (2.9.5)
+Requirement already satisfied: psycopg2 in /usr/local/lib/python3.10/dist-packages (2.9.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: pandas in /usr/local/lib/python3.9/dist-packages (1.4.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2.8.2)
-Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/dist-packages (from pandas) (1.22.4)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/dist-packages (from pandas) (2022.7.1)
-Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.15.0)
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (1.5.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas) (2022.7.1)
+Requirement already satisfied: numpy&gt;=1.21.0 in /usr/local/lib/python3.10/dist-packages (from pandas) (1.22.4)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
 </div>
@@ -496,7 +496,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-800d5641-8087-495d-84db-8dba61bdcac0">
+  <div id="df-96d309e6-5709-49a0-b821-65c484ee5c4d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -580,7 +580,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </table>
 <p>150 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-800d5641-8087-495d-84db-8dba61bdcac0')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-96d309e6-5709-49a0-b821-65c484ee5c4d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -631,12 +631,12 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 
       <script>
         const buttonEl =
-          document.querySelector('#df-800d5641-8087-495d-84db-8dba61bdcac0 button.colab-df-convert');
+          document.querySelector('#df-96d309e6-5709-49a0-b821-65c484ee5c4d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-800d5641-8087-495d-84db-8dba61bdcac0');
+          const element = document.querySelector('#df-96d309e6-5709-49a0-b821-65c484ee5c4d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -716,6 +716,10 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/dist-pack
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:Internal Python error in the inspect module.
+Below is the traceback from this internal error.
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connecting to the PostgreSQL database...
 could not connect to server: Connection refused
 	Is the server running on host &quot;localhost&quot; (127.0.0.1) and accepting
@@ -723,15 +727,143 @@ could not connect to server: Connection refused
 could not connect to server: Cannot assign requested address
 	Is the server running on host &quot;localhost&quot; (::1) and accepting
 	TCP/IP connections on port 5432?
+
+Traceback (most recent call last):
+  File &quot;&lt;ipython-input-3-dbcf4437872c&gt;&quot;, line 17, in connect
+    conn = psycopg2.connect(**params_dic)
+  File &quot;/usr/local/lib/python3.10/dist-packages/psycopg2/__init__.py&quot;, line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host &quot;localhost&quot; (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host &quot;localhost&quot; (::1) and accepting
+	TCP/IP connections on port 5432?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py&quot;, line 3553, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;&lt;ipython-input-3-dbcf4437872c&gt;&quot;, line 45, in &lt;cell line: 45&gt;
+    conn = connect(param_dic)
+  File &quot;&lt;ipython-input-3-dbcf4437872c&gt;&quot;, line 20, in connect
+    sys.exit(1)
+SystemExit: 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py&quot;, line 1101, in get_records
+    return _fixed_getinnerframes(etb, number_of_lines_of_context, tb_offset)
+  File &quot;/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py&quot;, line 248, in wrapped
+    return f(*args, **kwargs)
+  File &quot;/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py&quot;, line 281, in _fixed_getinnerframes
+    records = fix_frame_records_filenames(inspect.getinnerframes(etb, context))
+  File &quot;/usr/lib/python3.10/inspect.py&quot;, line 1662, in getinnerframes
+    frameinfo = (tb.tb_frame,) + getframeinfo(tb, context)
+AttributeError: &#39;tuple&#39; object has no attribute &#39;tb_frame&#39;
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">OperationalError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-dbcf4437872c&gt;</span> in <span class="ni">connect</span><span class="nt">(params_dic)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Connecting to the PostgreSQL database...&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">17</span>         <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">params_dic</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">DatabaseError</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">dsn</span> <span class="o">=</span> <span class="n">_ext</span><span class="o">.</span><span class="n">make_dsn</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">OperationalError</span>: could not connect to server: Connection refused
+	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">host</span> <span class="s2">&quot;localhost&quot;</span> <span class="p">(</span><span class="mf">127.0.0.1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">accepting</span>
+	<span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> 5432<span class="o">?</span>
+<span class="n">could</span> <span class="ow">not</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">server</span><span class="p">:</span> <span class="n">Cannot</span> <span class="n">assign</span> <span class="n">requested</span> <span class="n">address</span>
+	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">host</span> <span class="s2">&quot;localhost&quot;</span> <span class="p">(::</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">accepting</span>
+	<span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> 5432<span class="o">?</span>
+
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">SystemExit</span>Traceback (most recent call last)
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">1</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">&lt;ipython-input-3-dbcf4437872c&gt;</span> in <span class="ni">&lt;cell line: 45&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="c1"># Connect to the database</span>
+<span class="ne">---&gt; </span><span class="mi">45</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">param_dic</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> 
+
+<span class="nn">&lt;ipython-input-3-dbcf4437872c&gt;</span> in <span class="ni">connect</span><span class="nt">(params_dic)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">20</span>         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection successful&quot;</span><span class="p">)</span>
 
 <span class="ne">SystemExit</span>: 1
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py:3334: UserWarning: To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.
-  warn(&quot;To exit: use &#39;exit&#39;, &#39;quit&#39;, or Ctrl-D.&quot;, stacklevel=1)
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>Traceback (most recent call last)
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">1</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py</span> in <span class="ni">showtraceback</span><span class="nt">(self, exc_tuple, filename, tb_offset, exception_only, running_compiled_code)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2090</span>                     <span class="n">stb</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;An exception has occurred, use %tb to see &#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2091</span>                            <span class="s1">&#39;the full traceback.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">2092</span>                     <span class="n">stb</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">InteractiveTB</span><span class="o">.</span><span class="n">get_exception_only</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2093</span>                                                                      <span class="n">value</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2094</span>                 <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">get_exception_only</span><span class="nt">(self, etype, value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span>         <span class="n">value</span> <span class="p">:</span> <span class="n">exception</span> <span class="n">value</span>
+<span class="g g-Whitespace">    </span><span class="mi">753</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">754</span><span class="sd">         return ListTB.structured_traceback(self, etype, value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">755</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">756</span><span class="sd">     def show_exception_only(self, etype, evalue):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="sd">             chained_exceptions_tb_offset = 0</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd">             out_list = (</span>
+<span class="ne">--&gt; </span><span class="mi">629</span><span class="sd">                 self.structured_traceback(</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span><span class="sd">                     etype, evalue, (etb, chained_exc_ids),</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span><span class="sd">                     chained_exceptions_tb_offset, context)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">structured_traceback</span><span class="nt">(self, etype, value, tb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span><span class="sd">         else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span><span class="sd">             self.tb = tb</span>
+<span class="ne">-&gt; </span><span class="mi">1367</span><span class="sd">         return FormattedTB.structured_traceback(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span><span class="sd">             self, etype, value, tb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span><span class="sd"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">structured_traceback</span><span class="nt">(self, etype, value, tb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span><span class="sd">         if mode in self.verbose_modes:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span><span class="sd">             # Verbose modes need a full traceback</span>
+<span class="ne">-&gt; </span><span class="mi">1267</span><span class="sd">             return VerboseTB.structured_traceback(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1268</span><span class="sd">                 self, etype, value, tb, tb_offset, number_of_lines_of_context</span>
+<span class="g g-Whitespace">   </span><span class="mi">1269</span><span class="sd">             )</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Return</span> <span class="n">a</span> <span class="n">nice</span> <span class="n">text</span> <span class="n">document</span> <span class="n">describing</span> <span class="n">the</span> <span class="n">traceback</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1123</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1124</span><span class="s2">         formatted_exception = self.format_exception_as_a_whole(etype, evalue, etb, number_of_lines_of_context,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="s2">                                                                tb_offset)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1126</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">format_exception_as_a_whole</span><span class="nt">(self, etype, evalue, etb, number_of_lines_of_context, tb_offset)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1081</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1082</span><span class="s2">         last_unique, recursion_repeat = find_recursion(orig_etype, evalue, records)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span><span class="s2">         frames = self.format_records(records, last_unique, recursion_repeat)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/IPython/core/ultratb.py</span> in <span class="ni">find_recursion</span><span class="nt">(etype, value, records)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="s2">     # first frame (from in to out) that looks different.</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="s2">     if not is_recursion_error(etype, value, records):</span>
+<span class="ne">--&gt; </span><span class="mi">382</span><span class="s2">         return len(records), 0</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span><span class="s2">     # Select filename, lineno, func_name to track frames with</span>
+
+<span class="ne">TypeError</span>: object of type &#39;NoneType&#39; has no len()
 </pre></div>
 </div>
 </div>
